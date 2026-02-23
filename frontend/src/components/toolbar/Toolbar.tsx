@@ -2,7 +2,6 @@
  * Viewer Toolbar Component
  */
 
-import React from 'react';
 import { ToolGroupManager, Enums as csToolsEnums } from '@cornerstonejs/tools';
 import { useViewerStore } from '../../stores/viewerStore';
 import {
@@ -14,12 +13,10 @@ import {
   SquareDashed,
   ArrowUpRight,
   Triangle,
-  Crosshair,
   RotateCcw,
   Grid2x2,
   Grid3x3,
   Maximize2,
-  Download,
   Upload,
 } from 'lucide-react';
 

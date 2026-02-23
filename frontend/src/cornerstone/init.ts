@@ -20,7 +20,6 @@ import {
   PanTool,
   WindowLevelTool,
   StackScrollTool,
-  StackScrollMouseWheelTool,
   LengthTool,
   ProbeTool,
   RectangleROITool,
@@ -35,7 +34,6 @@ import {
   init as dicomImageLoaderInit,
   wadouri,
 } from '@cornerstonejs/dicom-image-loader';
-import dicomParser from 'dicom-parser';
 
 let initialized = false;
 
@@ -63,7 +61,6 @@ export async function initCornerstone(): Promise<void> {
   addTool(PanTool);
   addTool(WindowLevelTool);
   addTool(StackScrollTool);
-  addTool(StackScrollMouseWheelTool);
   addTool(LengthTool);
   addTool(ProbeTool);
   addTool(RectangleROITool);
@@ -92,7 +89,6 @@ export function createToolGroup(toolGroupId: string): ReturnType<typeof ToolGrou
   toolGroup.addTool(PanTool.toolName);
   toolGroup.addTool(WindowLevelTool.toolName);
   toolGroup.addTool(StackScrollTool.toolName);
-  toolGroup.addTool(StackScrollMouseWheelTool.toolName);
   toolGroup.addTool(LengthTool.toolName);
   toolGroup.addTool(ProbeTool.toolName);
   toolGroup.addTool(RectangleROITool.toolName);
@@ -117,8 +113,8 @@ export function createToolGroup(toolGroupId: string): ReturnType<typeof ToolGrou
     bindings: [{ mouseButton: csToolsEnums.MouseBindings.Secondary }],
   });
 
-  // Mouse wheel: Stack scroll
-  toolGroup.setToolActive(StackScrollMouseWheelTool.toolName);
+  // Mouse wheel: Stack scroll (StackScrollTool handles wheel by default)
+  toolGroup.setToolActive(StackScrollTool.toolName);
 
   // Set measurement tools as passive (can be enabled on demand)
   toolGroup.setToolPassive(LengthTool.toolName);

@@ -2,7 +2,7 @@
  * DICOM Viewer Application
  */
 
-import React, { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { RenderingEngine } from '@cornerstonejs/core';
 import { initCornerstone, createToolGroup } from './cornerstone/init';
 import { useViewerStore } from './stores/viewerStore';
@@ -56,11 +56,7 @@ function App() {
     init();
 
     return () => {
-      // Cleanup
-      const engine = RenderingEngine.getOrCreateRenderingEngine(RENDERING_ENGINE_ID);
-      if (engine) {
-        engine.destroy();
-      }
+      // Cleanup handled by rendering engine reference in store
     };
   }, []);
 

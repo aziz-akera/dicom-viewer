@@ -2,8 +2,8 @@
  * Study Browser Panel
  */
 
-import React, { useEffect, useState } from 'react';
-import { useViewerStore, Study, Series } from '../../stores/viewerStore';
+import { useEffect, useState } from 'react';
+import { useViewerStore, type Study, type Series } from '../../stores/viewerStore';
 import { studiesApi } from '../../services/api';
 import { Folder, Image, ChevronRight, ChevronDown, Trash2, RefreshCw } from 'lucide-react';
 

@@ -2,9 +2,8 @@
  * DICOM Upload Dialog
  */
 
-import React, { useRef, useState, useCallback } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import { uploadApi } from '../../services/api';
-import { useViewerStore } from '../../stores/viewerStore';
 import { X, Upload, File, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
 interface UploadDialogProps {

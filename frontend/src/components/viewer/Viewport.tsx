@@ -2,8 +2,8 @@
  * Cornerstone3D Viewport Component
  */
 
-import React, { useEffect, useRef, useCallback } from 'react';
-import { RenderingEngine, Enums, Types } from '@cornerstonejs/core';
+import { useEffect, useRef } from 'react';
+import { Enums, type Types } from '@cornerstonejs/core';
 import { ToolGroupManager } from '@cornerstonejs/tools';
 import { useViewerStore } from '../../stores/viewerStore';
 
@@ -80,10 +80,10 @@ export const Viewport: React.FC<ViewportProps> = ({
 };
 
 interface ViewportOverlayProps {
-  viewportId: string;
+  viewportId?: string;
 }
 
-const ViewportOverlay: React.FC<ViewportOverlayProps> = ({ viewportId }) => {
+const ViewportOverlay: React.FC<ViewportOverlayProps> = ({ viewportId: _viewportId }) => {
   const { currentStudy, currentSeries } = useViewerStore();
 
   return (
